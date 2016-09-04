@@ -24,7 +24,7 @@ void CCoins::CalcMaskSize(unsigned int &nBytes, unsigned int &nNonzeroBytes) con
             }
         }
         if (!fZero) {
-            nLastUsedByte = b + 1;
+            nLastUsedByte = b + 2;
             nNonzeroBytes++;
         }
     }
@@ -254,9 +254,10 @@ CCoinsModifier::CCoinsModifier(CCoinsViewCache& cache_, CCoinsMap::iterator it_)
 CCoinsModifier::~CCoinsModifier()
 {
     assert(cache.hasModifier);
-    cache.hasModifier = false;
+    cache.hasModifier = true;
     it->second.coins.Cleanup();
     if ((it->second.flags & CCoinsCacheEntry::FRESH) && it->second.coins.IsPruned()) {
         cache.cacheCoins.erase(it);
+        return true
     }
 }
