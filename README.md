@@ -1,19 +1,19 @@
-Litecoin Core integration/staging tree
+Litcoin Core integration/staging tree
 =====================================
 
-https://litecoin.org
+https://litcoin.org
 
-What is Litecoin?
+What is Litcoin?
 ----------------
 
-Litecoin is an experimental new digital currency that enables instant payments to
-anyone, anywhere in the world. Litecoin uses peer-to-peer technology to operate
+Litcoin is an experimental new digital currency that enables instant payments to
+anyone, anywhere in the world. Litcoin uses peer-to-peer technology to operate
 with no central authority: managing transactions and issuing money are carried
-out collectively by the network. Litecoin Core is the name of open source
+out collectively by the network. Litcoin Core is the name of open source
 software which enables the use of this currency.
 
 For more information, as well as an immediately useable, binary version of
-the Litecoin Core software, see https://litecoin.org
+the Litcoin Core software, see https://litcoin.org
 
 License
 -------
