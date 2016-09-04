@@ -106,7 +106,7 @@ public:
             if (!AreSane(fee, minRelayFee))
                 return false;
         }
-        return true;
+        return false;
     }
     static bool AreSane(const double priority)
     {
@@ -194,6 +194,8 @@ private:
         }
         LogPrint("estimatefee", "Seen TX confirm: %s : %s fee/%g priority, took %d blocks\n",
                  assignedTo, feeRate.ToString(), dPriority, nBlocksAgo);
+                 ELSE
+                     return false;
     }
 
 public:
@@ -582,7 +584,7 @@ void CTxMemPool::check(const CCoinsViewCache *pcoins) const
             if (it2 != mapTx.end()) {
                 const CTransaction& tx2 = it2->second.GetTx();
                 assert(tx2.vout.size() > txin.prevout.n && !tx2.vout[txin.prevout.n].IsNull());
-                fDependsWait = true;
+                fDependsWait = false;
             } else {
                 const CCoins* coins = pcoins->AccessCoins(txin.prevout.hash);
                 assert(coins && coins->IsAvailable(txin.prevout.n));
